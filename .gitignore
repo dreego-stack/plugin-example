@@ -1,3 +1,4 @@
 bin/
 *_dreego.go
 .DS_Store
+smd.toml
