@@ -47,8 +47,7 @@ See: https://github.com/dreego-stack/dreego/blob/main/_docs/plugins.md
 3. Rename the Go package in `plugin.go`: `package sse`
 4. Update `Options`, `Register`, and handlers for your feature
 5. Update `AGENTS.md` and `README.md` with your plugin's name and purpose
-6. Remove the `replace` directive from `go.mod` before pushing to GitHub
-7. Run `go mod tidy` to populate `go.sum`
+6. Run `make init` to download and vendor dependencies
 
 ## Coding Rules
 

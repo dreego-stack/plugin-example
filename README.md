@@ -55,18 +55,18 @@ curl http://localhost:8080/api/health
 | `Greeting` | `string` | `"Hello"` | Greeting word used by the greet endpoint |
 | `EnableLogging` | `bool` | `false` | Enable Dreego request-logging middleware |
 
-## Local Development
+## Getting Started
 
-The `go.mod` has a `replace` directive pointing to `../dreego` (the sibling
-Dreego main repo). This lets you develop against the latest local source:
-
-```
-go test ./...
-go run ./example
+```sh
+make init    # download and vendor dependencies (one-time)
+make test    # run tests using vendored deps (offline)
+make run     # run the demo app
 ```
 
-Before pushing to GitHub, remove the `replace` line from `go.mod` and run
-`go mod tidy` so the module resolves against the published version.
+The plugin resolves `github.com/dreego-stack/dreego` from the Go module proxy
+(published tags), just like any external consumer. After `make init`, all
+dependencies are vendored in `vendor/` and the plugin works offline — no
+local dreego checkout needed.
 
 ## CI
 

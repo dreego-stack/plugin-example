@@ -15,12 +15,6 @@ jobs:
         with:
           go-version: '1.22'
           cache: false
-      - name: Remove local replace directive
-        run: |
-          if grep -q '^replace' go.mod; then
-            sed -i '/^replace/d' go.mod
-            go mod tidy
-          fi
       - name: go vet
         run: go vet ./...
       - name: go test -race
@@ -37,7 +31,7 @@ jobs:
           cache: false
       - name: Test against latest dreego tag
         run: |
-          sed -i '/^replace/d' go.mod
           go get github.com/dreego-stack/dreego@latest
           go mod tidy
-          go test -race ./...
+          go mod vendor
+          go test -mod=vendor -race ./...
