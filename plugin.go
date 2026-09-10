@@ -21,8 +21,8 @@ func Register(app *dreego.App, options Options) error {
 		options.Greeting = "Hello"
 	}
 	if options.EnableLogging {
-		if err := app.Use(dreego.RequestLogging()); err != nil {
-			return fmt.Errorf("example: register logging middleware: %w", err)
+		if err := app.SetLogging(true); err != nil {
+			return fmt.Errorf("example: enable request logging: %w", err)
 		}
 	}
 	if err := app.SetErrorHandler(http.StatusNotFound, notFoundHandler); err != nil {

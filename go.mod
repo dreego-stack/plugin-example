@@ -2,4 +2,6 @@ module github.com/dreego-stack/plugin-example
 
 go 1.22
 
-require github.com/dreego-stack/dreego v0.0.69
+require github.com/dreego-stack/dreego v0.6.6
+
+require golang.org/x/text v0.22.0 // indirect
