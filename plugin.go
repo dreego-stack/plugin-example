@@ -8,8 +8,8 @@ import (
 )
 
 type Options struct {
-	Prefix       string
-	Greeting     string
+	Prefix        string
+	Greeting      string
 	EnableLogging bool
 }
 
