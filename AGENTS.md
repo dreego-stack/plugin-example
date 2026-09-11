@@ -53,7 +53,7 @@ See: https://github.com/dreego-stack/dreego/blob/main/_docs/plugins.md
 
 - Max 300 lines per handwritten file, one logical thing per file
 - No code comments (except where needed for clarity)
-- Go 1.22+, prefer standard library
+- Go 1.27+, prefer standard library
 - One Go package per repository (the plugin package at root)
 - `example/` subdirectory holds a demo app, not part of the published API
 
